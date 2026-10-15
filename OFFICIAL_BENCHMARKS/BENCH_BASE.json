@@ -1,0 +1,317 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "LIBROSA",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\AUDIO_CONSUMER\\LIBROSA\\UPSTREAM_CLONE",
+    "git": {
+      "head": "b02c5ac37c1e453ae4811bfd383b93525589dae8",
+      "url": "https://github.com/librosa/librosa",
+      "branch": "main",
+      "committed_at": "2026-09-29T14:42:50-04:00"
+    }
+  },
+  "metrics": {
+    "files_total": 79,
+    "source_files_scanned": 41,
+    "lines_of_code": 34204,
+    "languages": {
+      ".py": 40,
+      ".yml": 16,
+      ".md": 7,
+      ".pyi": 4,
+      "(none)": 3,
+      ".json": 2,
+      ".in": 1,
+      ".toml": 1,
+      ".cfg": 1,
+      ".typed": 1,
+      ".msgpack": 1,
+      ".txt": 1,
+      ".sh": 1
+    }
+  },
+  "licence": {
+    "spdx": "ISC",
+    "class": "A",
+    "source_file": "LICENSE.md",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 0,
+    "unique": 0,
+    "by_ecosystem": {},
+    "list": []
+  },
+  "owasp_top10": {
+    "total_findings": 8,
+    "files_with_findings": 7,
+    "severity": {
+      "high": 1,
+      "medium": 1,
+      "low": 6
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A03-Injection": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "librosa/_cache.py",
+            "line": 67,
+            "cwe": "CWE-95",
+            "snippet": "def eval(self, *args: Any, **kwargs: Any) -> Any:"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 5,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "librosa/beat.py",
+            "line": 531,
+            "cwe": "CWE-",
+            "snippet": "# TODO: this might be better accomplished with a np.broadcast_shapes check"
+          },
+          {
+            "severity": "low",
+            "file": "librosa/filters.py",
+            "line": 936,
+            "cwe": "CWE-",
+            "snippet": "# TODO: if we add custom window functions in librosa, call them here"
+          },
+          {
+            "severity": "low",
+            "file": "librosa/onset.py",
+            "line": 586,
+            "cwe": "CWE-",
+            "snippet": "# Efficiency hack: skip filtering step and pass by reference"
+          },
+          {
+            "severity": "low",
+            "file": "librosa/core/constantq.py",
+            "line": 38,
+            "cwe": "CWE-",
+            "snippet": "# TODO: ivqt, griffinlim_vqt"
+          },
+          {
+            "severity": "low",
+            "file": "librosa/util/utils.py",
+            "line": 657,
+            "cwe": "CWE-",
+            "snippet": "# TODO: this whole function could be made more efficient"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "librosa/beat.py",
+            "line": 106,
+            "cwe": "CWE-319",
+            "snippet": "http://labrosa.ee.columbia.edu/projects/beattrack/"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "librosa/util/files.py",
+            "line": 119,
+            "cwe": "CWE-918",
+            "snippet": "return str(__GOODBOY.fetch(remote_url))"
+          }
+        ]
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 10,
+    "files_with_findings": 10,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 10
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 10,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "librosa/decompose.py",
+            "line": 483,
+            "cwe": "CWE-",
+            "snippet": "De-noise a chromagram by non-local median filtering."
+          },
+          {
+            "severity": "low",
+            "file": "librosa/display.py",
+            "line": 76,
+            "cwe": "CWE-",
+            "snippet": "\"ChromaFormatter\","
+          },
+          {
+            "severity": "low",
+            "file": "librosa/filters.py",
+            "line": 30,
+            "cwe": "CWE-",
+            "snippet": "\"chroma\","
+          },
+          {
+            "severity": "low",
+            "file": "librosa/segment.py",
+            "line": 214,
+            "cwe": "CWE-",
+            "snippet": ">>> chroma_ref = librosa.feature.chroma_cqt(y=y_ref, sr=sr, hop_length=hop_length)"
+          },
+          {
+            "severity": "low",
+            "file": "librosa/sequence.py",
+            "line": 192,
+            "cwe": "CWE-",
+            "snippet": "audio feature matrix (e.g., chroma features)"
+          },
+          {
+            "severity": "low",
+            "file": "librosa/core/audio.py",
+            "line": 1203,
+            "cwe": "CWE-",
+            "snippet": "STFT matrix, or any STFT-derived matrix (e.g., chromagram"
+          },
+          {
+            "severity": "low",
+            "file": "librosa/core/convert.py",
+            "line": 2129,
+            "cwe": "CWE-",
+            "snippet": "- If ndarray, X is a feature matrix, e.g. STFT, chromagram, or mel spectrogram."
+          },
+          {
+            "severity": "low",
+            "file": "librosa/core/notation.py",
+            "line": 627,
+            "cwe": "CWE-",
+            "snippet": "\"\"\"List all 12 chromatic note names, as spelled according to a given key or mode."
+          },
+          {
+            "severity": "low",
+            "file": "librosa/feature/spectral.py",
+            "line": 35,
+            "cwe": "CWE-",
+            "snippet": "\"chroma_stft\","
+          },
+          {
+            "severity": "low",
+            "file": "librosa/feature/utils.py",
+            "line": 210,
+            "cwe": "CWE-",
+            "snippet": "Stack time-lagged beat-synchronous chroma edge padding"
+          }
+        ]
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:9758c3dd-4c55-50ff-a636-1668f4bef242",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-05T14:35:12Z",
+      "component": {
+        "type": "application",
+        "name": "LIBROSA",
+        "version": "b02c5ac37c1e",
+        "bom-ref": "pkg:generic/anticloud/LIBROSA@b02c5ac37c1e",
+        "purl": "pkg:generic/anticloud/LIBROSA@b02c5ac37c1e",
+        "licenses": [
+          {
+            "license": {
+              "id": "ISC"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "b02c5ac37c1e453ae4811bfd383b93525589dae8"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/librosa/librosa"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": []
+  },
+  "elapsed_seconds": 34.51
+}
